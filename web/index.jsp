@@ -12,25 +12,31 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="calculator.css" rel="stylesheet" type="text/css"/>
+        <script src="jquery-1.6.1.js"></script>
+        <script src="calculator.js" type="text/javascript"></script>
     </head>
     <body>
         <h1>Area of a Square Calculator</h1>
         <form method="POST" action="CalculatorController">
             <input type="text" name="length" placeholder="Enter Length" value=""/>
             <input type="text" name="width" placeholder="Enter Width" value=""/>
-            <input type="submit" name="submit" value="Calculate"/>
+            <input type="submit" onclick="clickSquare()"name="submit" value="Calculate"/>
         </form>
+            <p id="square">
+            <%=request.getAttribute("myMsg")%>
+            </p>
         <h1>Area of a Circle Calculator</h1>
-        <form method="POST" action="asdf">
+        <form method="POST" action="CalculatorController">
             <input type="text" name="radius" placeholder="Enter Radius" value=""/>
             <input type="submit" name="submit" value="Calculate"/>
         </form>
 
         <h1>Find Unknown Side of Triangle</h1>
-        <form method="POST" action="asdf">
+        <form method="POST" action="CalculatorController">
             <input type="text" name="sideA" placeholder="Enter Side A" value=""/>
             <input type="text" name="sideB" placeholder="Enter Side B" value=""/>
             <input type="submit" name="submit" value="Calculate"/>
         </form>
+
     </body>
 </html>

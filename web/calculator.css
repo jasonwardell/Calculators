@@ -3,3 +3,13 @@ h1 {
     color: green;
 }
 
+#square {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    color: green;
+}
+
+html {
+    background-color: lightgrey;
+}

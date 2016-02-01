@@ -49,7 +49,7 @@ public class CalculatorController extends HttpServlet {
                 request.setAttribute("myMsg", responseMsg);
             }
             RequestDispatcher view
-                    = request.getRequestDispatcher("/results.jsp");
+                    = request.getRequestDispatcher("/index.jsp");
             view.forward(request, response);
 
         } catch (Exception e) {
