@@ -33,12 +33,21 @@ public class CalculatorController extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             String length = request.getParameter("length");
             String width = request.getParameter("width");
+            String radius = request.getParameter("radius");
+            String sideA = request.getParameter("sideA");
+            String sideB = request.getParameter("sideB");
 
             CalculatorService service = new CalculatorService();
-            String responseMsg = service.getArea(length, width);
-
-            request.setAttribute("myMsg", responseMsg);
-
+            if (length != null & width != null) {
+                String responseMsg = service.getSquareArea(length, width);
+                request.setAttribute("myMsg", responseMsg);
+            } else if (radius != null) {
+                String responseMsg = service.getCircleArea(radius);
+                request.setAttribute("myMsg", responseMsg);
+            } else if (sideA != null & sideB != null) {
+                String responseMsg = service.getSideC(sideA, sideB);
+                request.setAttribute("myMsg", responseMsg);
+            }
             RequestDispatcher view
                     = request.getRequestDispatcher("/results.jsp");
             view.forward(request, response);
