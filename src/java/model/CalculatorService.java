@@ -54,12 +54,12 @@ public class CalculatorService {
     public String getSquareArea(String length, String width) {
         int value = Integer.parseInt(length) * Integer.parseInt(width);
         area = Integer.toString(value);
-        return  "The area of that square is " + area;
+        return  "The area of that square is " + area + "sq x";
     }
     
     public String getCircleArea(String radius) {
         double circle = (3.14159265359 * (Integer.parseInt(radius) * Integer.parseInt(radius))); 
         String circleArea = Double.toString(circle);
-        return "The area of that circle is " + circleArea;
+        return "The area of that circle is " + circleArea + "sq x";
     }
 }
